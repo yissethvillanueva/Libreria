@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-	--primary-color: #00744ba7;
+	--primary-color: #3A357E;
 	--background-color: #f9f5f0;
 	--dark-color: #151515;
 }
@@ -44,6 +44,7 @@ html {
 	display: flex;
 	align-items: center;
 	gap: 2rem;
+	color: #3A357E;
 }
 
 .customer-support i {
@@ -87,6 +88,11 @@ html {
 }
 
 .container-user .fa-basket-shopping {
+	font-size: 3rem;
+	color: var(--primary-color);
+	padding-left: 1rem;
+}
+.container-user .fa-tools {
 	font-size: 3rem;
 	color: var(--primary-color);
 	padding-left: 1rem;
@@ -362,6 +368,9 @@ html {
 	border-radius: 3rem;
 }
 */
+.banner {
+	background-color: var(--background-color);
+}
 .slider{
 	width: 1200px;
 	height: 550px;
@@ -369,6 +378,7 @@ html {
 	overflow: hidden;
 	background-size: cover;
 	background-position: center;
+	background-color: var(--background-color);
 }
 
 .slider h2{
@@ -539,7 +549,7 @@ html {
 
 .features-conten span {
 	font-weight: 700;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	color: #fff;
 }
 
@@ -557,8 +567,8 @@ html {
 
 .feature-content span {
 	font-weight: 700;
-	font-size: 1.2rem;
-	color: var(--dark-color);
+	font-size: 1rem;
+	color: black;
 }
 
 .feature-content p {
@@ -568,7 +578,7 @@ html {
 
 .promociones{
 	background-image: linear-gradient(100deg, #00000000, #ffffff00),
-		url('img/promo.jpg');
+		url('img/promo.png');
 	height: 60rem;
 	background-size: cover;
 	background-position: center;
@@ -676,6 +686,7 @@ html {
 	color: black;
 }
 /*TOP PRODUCTS*/
+
 .top-products {
 	display: flex;
 	flex-direction: column;
@@ -873,6 +884,7 @@ html {
 	grid-template-rows: repeat(2, 30rem);
 	gap: 1.5rem;
 	margin-bottom: 3rem;
+	background-color: var(--background-color);
 }
 
 .gallery img {
@@ -1019,6 +1031,7 @@ html {
 	font-weight: 600;
 	font-size: 1.6rem;
 	text-transform: uppercase;
+	color:white
 }
 
 .contact-info,
