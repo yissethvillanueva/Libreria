@@ -28,11 +28,11 @@ html {
 	font-weight: 500;
 	font-size: 3rem;
 }
-/*HEADER */
+/*HEADER 
 .container-hero {
 	background-color: var(--background-color);
 }
-
+*/
 .hero {
 	display: flex;
 	justify-content: space-between;
@@ -328,7 +328,77 @@ html {
 	font-size: 2rem;
 	color: #fff;
 }
+/* Light Mode Button Styles
+--------------------------- */
 
+.light-mode-button {
+    background: 0;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 30px;
+    width:100px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.light-mode-button:focus {
+    outline: none; /* Not ideal for accessibility */
+}
+
+.light-mode-button span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #74528e;
+    box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+    transition: 0.3s;
+}
+
+.light-mode-button span:nth-child(2) {
+    position: absolute;
+    top: 02px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+    transition: 0.3s;
+}
+
+/* Light & Dark Mode Styles
+		--------------------------- */
+
+body {
+    background-color: var(--background-color);
+    transition: background-color 0.3s;
+}
+
+body[light-mode="dark"] {
+    background-color: #17101a;
+    color: white;
+}
+
+
+body[light-mode="dark"] .light-mode-button span:nth-child(1) {
+    background-color: #23002d;
+    color: #ffffff;
+}
+
+body[light-mode="dark"] .light-mode-button span:nth-child(2) {
+    left: 30px;
+    background-color: #7a318c;
+}
+
+body[light-mode="dark"] a {
+    color: #ffffff;
+}
 /*BANNER
 .banner {
 	background-image: linear-gradient(100deg, #000000, #00000020),
@@ -367,10 +437,10 @@ html {
 	text-transform: uppercase;
 	border-radius: 3rem;
 }
-*/
+
 .banner {
 	background-color: var(--background-color);
-}
+}*/
 .slider{
 	width: 1200px;
 	height: 550px;
@@ -378,7 +448,7 @@ html {
 	overflow: hidden;
 	background-size: cover;
 	background-position: center;
-	background-color: var(--background-color);
+	/*background-color: var(--background-color);*/
 }
 
 .slider h2{
@@ -512,11 +582,11 @@ html {
 }
 
 
-/*MAIN CONTENT*/
+/*MAIN CONTENT
 .main-content {
 	background-color: var(--background-color);
 }
-
+*/
 /*FEATURES*/
 .container-features {
 	display: grid;
@@ -739,6 +809,7 @@ html {
 
 .card-product h3{
 	text-align: center;
+	color: var(--dark-color);
 }
 
 .container-img {
@@ -865,7 +936,7 @@ html {
 .content-card-product .price {
 	justify-self: end;
 	align-self: center;
-
+	color: var(--dark-color);
 	font-size: 1.7rem;
 	font-weight: 600;
 }
