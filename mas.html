@@ -12,13 +12,101 @@
 	</head>
 	<body>
         <header>
-			<div class="container-hero">
+			<div class="hero">
+				<nav>
+					<img src="img/logo.png" class="logo">
+					<h1>Book Center</h1>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="catLibro.html">Browse</a></li>
+						<li><a href="mas.html">About Us</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+
+					<div class="search-box">
+						<input type="text" placeholder="Search...">
+						<div class="search-btn">
+							<i class="fa-solid fa-search"></i>
+						</div>
+						<div class="cancel-btn">
+							<i class="fa-solid fa-times"></i>
+						</div>
+						<div class="search-data"></div>
+					</div>
+					<script>
+						const searchBtn = document.querySelector(".search-btn");
+						const cancelBtn = document.querySelector(".cancel-btn");
+						const searchBox = document.querySelector(".search-box");
+						const searchInput = document.querySelector("input");
+						const searchData = document.querySelector(".search-data");
+						searchBtn.onclick = () =>{
+							searchBox.classList.add("active");
+							searchInput.classList.add("active");
+							searchBtn.classList.add("active");
+							cancelBtn.classList.add("active");
+							if(searchInput.value != ""){
+								let values = searchInput.value;
+								searchData.classList.remove("active");
+								searchData.innerHTML = "You just typed: " + "<span style='font-weight:500;'>" + values + "</span>";
+							}else{
+								searchData.innerHTML = "";
+							}
+						}
+						cancelBtn.onclick = () =>{
+							searchBox.classList.remove("active");
+							searchInput.classList.remove("active");
+							searchBtn.classList.remove("active");
+							cancelBtn.classList.remove("active");
+							searchData.classList.add("active");
+							searchInput.value = "";
+						}
+					</script>
+					<img src="img/usuario.png" class="user-pic" onclick="toggleMenu()">
+					
+					<div class="sub-menu-wrap" id="subMenu">
+						<div class="sub-menu">
+							<div class="user-info">
+								<img src="img/usuario.png">
+								<h2>Dayana Solano</h2>
+							</div>
+							<hr>
+							<a href="#" class="sub-menu-link">
+								<img src="img/library.png">
+								<p>My Library</p>
+								<span>></span>
+							</a>
+							<a href="#" class="sub-menu-link">
+								<img src="img/settings.png">
+								<p>Setting & Privacy</p>
+								<span>></span>
+							</a>
+							<a href="#" class="sub-menu-link">
+								<img src="img/help.png">
+								<p>Help & Support</p>
+								<span>></span>
+							</a>
+							<a href="#" class="sub-menu-link">
+								<img src="img/logout.png">
+								<p>Log Out</p>
+								<span>></span>
+							</a>
+							<hr>
+							<p>Light Mode/Dark Mode</p>
+							<button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
+								<span></span>
+								<span></span>
+							</button>	
+						</div>
+					</div>
+					<a href="shop.html"><img src="img/premium.png" class="user-pic"></a>
+				</nav>
+			</div>
+			<!--<div class="container-hero">
 				<div class="container hero">
 					<div class="customer-support">
 						<i class="fa-solid fa-headset"></i>
 						<div class="content-customer-support">
-							<span class="text">Soporte al cliente</span>
-							<span class="number">123-456-7890</span>
+
 						</div>
 					</div>
 					
@@ -26,60 +114,66 @@
 						<i class="fa-solid fa-book"></i>
 						<h1 class="logo"><a href="/">Book Center</a></h1>
 					</div>
-
-					<div class="container-user">
-						<i class="fa-solid fa-user"></i>
-						<i class="fa-solid fa-basket-shopping"></i>
+				
+				<div class="container-user">
+						<a href="#"><i class="fa-solid fa-user"></i></a>
+						<a href="shop.html"><i class="fa-solid fa-basket-shopping"></i></a>
 						<div class="content-shopping-cart">
 							<span class="text">Carrito</span>
 							<span class="number">(0)</span>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="container-navbar">
+			</div>-->
+			<!--<div class="container-navbar">
 				<nav class="navbar container">
 					<i class="fa-solid fa-bars"></i>
-					<ul class="menu">
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="mas.html">Acerca de nosotros</a></li>
-					</ul>
-
+						<ul class="menu">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#">Browse</a>
+								<ul class="sub-menu">
+									<li><a href="#">Arte</a></li>
+									<li><a href="#">Comedia</a></li>
+								</ul>
+							</li>
+							<li><a href="mas.html">US</a></li>
+						</ul>
 					<form class="search-form">
-						<input type="search" placeholder="Buscar..." />
+						<input type="search" placeholder="Search..." />
 						<button class="btn-search">
 							<i class="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</form>
+					<button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
+						<span></span>
+						<span></span>
+					</button>		
 				</nav>
-			</div>
+			</div>-->
 		</header>
 		<main class="main-content">
 			<section class="container blogs2">
-				<h1 class="heading-1">Conoce más sobre Book Center</h1>
+				<h1 class="heading-1">Learn more about Book Center</h1>
 				<div class="container-blogs2">
 					<div class="card-moka">
 						<div class="content-blog2">
-							<h3>Acerca de nosotros</h3>
+							<h3>About Us</h3>
 							<div class="content">
 								<p>
-									Bienvenido a Book Center, tu destino literario definitivo. Nos enorgullece ser una de las librerías más reconocidas y apasionadas, dedicada a proporcionar a nuestros clientes una experiencia excepcional de descubrimiento y deleite en el mundo de los libros.
+									Welcome to Book Center, your ultimate literary destination. We are proud to be one of the most recognized and passionate bookstores, dedicated to providing our customers with an exceptional experience of discovery and delight in the world of books.
 								</p>
-								<br><br />
+								<br>
 								<p>
-									En Book Center, creemos en el poder de las palabras y en la importancia de la lectura. Nuestro objetivo es ser más que una simple librería; queremos ser tu refugio, tu fuente de conocimiento y tu inspiración. Nuestra amplia selección de libros de diferentes géneros y temas, tanto clásicos como contemporáneos, te invita a explorar nuevos mundos, descubrir diferentes perspectivas y sumergirte en historias cautivadoras.
+									At Book Center, we believe in the power of words and the importance of reading. Our goal is to be more than just a bookstore; We want to be your refuge, your source of knowledge and your inspiration. Our wide selection of books of different genres and themes, both classic and contemporary, invites you to explore new worlds, discover different perspectives and immerse yourself in captivating stories.
 								</p>
-								<br><br />
+								<br>
 								<p>
-									En Book Center, también reconocemos el valor de la comodidad y la tecnología en el mundo moderno. Por lo tanto, podrás explorar nuestro catálogo en línea, donde podrás comprar tus libros favoritos desde la comodidad de tu hogar. Nuestra plataforma en línea está diseñada para ofrecerte una experiencia de compra fácil, segura y rápida.
+									At Book Center, we also recognize the value of convenience and technology in the modern world. Therefore, you can explore our online catalog, where you can buy your favorite books from the comfort of your home. Our online platform is designed to offer you an easy, secure and fast shopping experience.
 								</p>
-								<br><br />
+								<br>
 								<p>
-									Gracias por elegir Book Center como tu destino literario. Esperamos que encuentres alegría, conocimiento y aventura en nuestras páginas. ¡Nos vemos entre las estanterías!
+									Thank you for choosing Book Center as your literary destination. We hope you find joy, knowledge and adventure in our pages. See you among the shelves!
 								</p>
-
-								<br></br>
 							</div>
 							
 						</div>
@@ -91,18 +185,19 @@
 					</div>
 				</div>
 			</section>
+			</main>
 			<footer class="footer">
 				<div class="container container-footer">
 					<div class="menu-footer">
 						<div class="contact-info">
-							<p class="title-footer">Información de Contacto</p>
+							<p class="title-footer">Contact Info</p>
 							<ul>
 								<li>
-									Dirección: Km 4 ½ Carretera Norte, frente a la Parmalat
+									Address: Km 4 ½ Carretera Norte, frente a la Parmalat
 								</li>
-								<li>Teléfono: 123-456-7890</li>
+								<li>Phone Number: 123-456-7890</li>
 								<li>Fax: 555</li>
-								<li>EmaiL: BookCenter@support.com</li>
+								<li>E-MaiL: BookCenter@support.com</li>
 							</ul>
 							<div class="social-icons">
 								<span class="facebook">
@@ -124,24 +219,21 @@
 						</div>
 	
 						<div class="information">
-							<p class="title-footer">Información</p>
+							<p class="title-footer">More Info</p>
 							<ul>
-								<li><a href="mas.html">Acerca de Nosotros</a></li>
-								<li><a href="#">Información Delivery</a></li>
-								<li><a href="#">Politicas de Privacidad</a></li>
-								<li><a href="#">Términos y condiciones</a></li>
-								<li><a href="#">Contactános</a></li>
+								<li><a href="mas.html">About Us</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Terms and Conditions</a></li>
 							</ul>
 						</div>
 	
 						<div class="my-account">
-							<p class="title-footer">Mi cuenta</p>
+							<p class="title-footer">My Account</p>
 	
 							<ul>
-								<li><a href="#">Mi cuenta</a></li>
-								<li><a href="#">Historial de ordenes</a></li>
-								<li><a href="#">Lista de deseos</a></li>
-								<li><a href="#">Reembolsos</a></li>
+								<li><a href="#">My Favorites</a></li>
+								<li><a href="#">Reading History</a></li>
+								<li><a href="#">Wishlist</a></li>
 							</ul>
 						</div>
 					</div>
@@ -151,12 +243,24 @@
 					</div>
 				</div>
 			</footer>
+			<script
+				src="https://kit.fontawesome.com/81581fb069.js"
+			></script>
+			<script>
+				var app = document.getElementsByTagName("BODY")[0];
+				if (localStorage.lightMode == "dark") {
+					app.setAttribute("light-mode", "dark");
+				}
+			</script>
+			<script src="darkmode.js"></script>
+			<script>
+				let subMenu = document.getElementById("subMenu");
 	
-		</main>
-		<script
-			src="https://kit.fontawesome.com/81581fb069.js"
-			crossorigin="anonymous"
-		></script>
+				function toggleMenu(){
+					subMenu.classList.toggle("open-menu");
+				}
+			</script>
+			<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 	</body>
 </html>
     

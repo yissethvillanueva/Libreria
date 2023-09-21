@@ -5,266 +5,260 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="styles.css">
-		<title>Amigos</title>
+		<title>BookCenter</title>
 	</head>
 	<body>
         <header>
-			<div class="container-hero">
-				<div class="container hero">
-					<div class="customer-support">
-						<i class="fa-solid fa-headset"></i>
-						<div class="content-customer-support">
-							<span class="text">Soporte al cliente</span>
-							<span class="number">123-456-7890</span>
+			<div class="hero">
+				<nav>
+					<img src="img/logo.png" class="logo">
+					<h1>Book Center</h1>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="catLibro.html">Browse</a></li>
+						<li><a href="mas.html">About Us</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+
+					<div class="search-box">
+						<input type="text" placeholder="Search...">
+						<div class="search-btn">
+							<i class="fa-solid fa-search"></i>
+						</div>
+						<div class="cancel-btn">
+							<i class="fa-solid fa-times"></i>
+						</div>
+						<div class="search-data"></div>
+					</div>
+					<script>
+						const searchBtn = document.querySelector(".search-btn");
+						const cancelBtn = document.querySelector(".cancel-btn");
+						const searchBox = document.querySelector(".search-box");
+						const searchInput = document.querySelector("input");
+						const searchData = document.querySelector(".search-data");
+						searchBtn.onclick = () =>{
+							searchBox.classList.add("active");
+							searchInput.classList.add("active");
+							searchBtn.classList.add("active");
+							cancelBtn.classList.add("active");
+							if(searchInput.value != ""){
+								let values = searchInput.value;
+								searchData.classList.remove("active");
+								searchData.innerHTML = "You just typed: " + "<span style='font-weight:500;'>" + values + "</span>";
+							}else{
+								searchData.innerHTML = "";
+							}
+						}
+						cancelBtn.onclick = () =>{
+							searchBox.classList.remove("active");
+							searchInput.classList.remove("active");
+							searchBtn.classList.remove("active");
+							cancelBtn.classList.remove("active");
+							searchData.classList.add("active");
+							searchInput.value = "";
+						}
+					</script>
+					<img src="img/usuario.png" class="user-pic" onclick="toggleMenu()">
+					
+					<div class="sub-menu-wrap" id="subMenu">
+						<div class="sub-menu">
+							<div class="user-info">
+								<img src="img/usuario.png">
+								<h2>Dayana Solano</h2>
+							</div>
+							<hr>
+							<a href="#" class="sub-menu-link">
+								<img src="img/library.png">
+								<p>My Library</p>
+								<span>></span>
+							</a>
+							<a href="#" class="sub-menu-link">
+								<img src="img/settings.png">
+								<p>Setting & Privacy</p>
+								<span>></span>
+							</a>
+							<a href="#" class="sub-menu-link">
+								<img src="img/help.png">
+								<p>Help & Support</p>
+								<span>></span>
+							</a>
+							<a href="#" class="sub-menu-link">
+								<img src="img/logout.png">
+								<p>Log Out</p>
+								<span>></span>
+							</a>
+							<hr>
+							<p>Light Mode/Dark Mode</p>
+							<button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
+								<span></span>
+								<span></span>
+							</button>	
 						</div>
 					</div>
-					<div class="container-logo">
-						<i class="fa-solid fa-book"></i>
-						<h1 class="logo"><a href="/">Books Center</a></h1>
-					</div>
-                    <div class="container-shop">
-                        <nav id="carrito">
-                            <a href="shop.html"><i class="fa-solid fa-basket-shopping">
-                                <div class="content-shopping-cart">
-                                    <ul class="nav-card">
-                                        <li>Imagen</li>
-                                        <li>Nombre</li>
-                                        <li>Precio</li>
-                                        <li>Cantidad</li>
-                                        <li></li>
-                                    </ul>
-                                    <div class="lista-de-productos">
-                                        <!-- <img src="img/cafe-irish.jpg">
-                                        <p>Cafe Irish</p>
-                                        <p>$4.60</p>
-                                        <p>1</p>
-                                        <p><span>X</span></p> -->
-                                    </div>
-                                    <button id="vaciar-carrito">Vaciar Carrito</button>
-                                        <!-- <span class="text">Carrito</span>
-                                        <span class="number">(0)</span> -->
-                                </div>
-                            </i></a>
-                        </nav>
+					<a href="shop.html"><img src="img/premium.png" class="user-pic"></a>
+				</nav>
+			</div>    
+        </header>
+        <section class="banner">
+            <div class="content-banner">
+                <p>Book Center</p>
+                <h3>Get more from the platform you already love.</h3>
+                <br />
+                <h2>Try Premium <i class="fa-brands fa-plus"></i></h2>
+            </div>
+        </section>
+        <h1 class="heading-shop">What you’ll enjoy with Book Center Premium</h1>
+        <main class="services container">
+            <div class="service">
+                <img src="img/icon5.png" alt="">
+                <h3>No ads.</h3>
+                <br>
+                <h3>Period.</h3>
+                <p>
+                    Never wait for an ad to finish to get to the next chapter again.
+                </p>
+            </div>
+            <div class="service">
+                <img src="img/icon6.png" alt="">
+                <h3>Unlimited</h3>
+                <br>
+                <h3>Offline stories</h3>
+                <p>
+                    Take your favourite reads on the go, with or without an internet connection.
+                </p>
+            </div>
+            <div class="service">
+                <img src="img/icon7.png" alt="">
+                <h3>Unlock</h3>
+                <br>
+                <h3>Paid Stories</h3>
+                <p>
+                    Unlock 2 Paid Stories of your choice per month
+                </p>
+            </div>
+        </main>
+        <section class="container premium">
+            <h1 class="heading-1">Try Premium <i class="fa-bars fa-plus"></i></h1>
+            <div class="container-premium">
+                <!-- Producto 1 -->
+                <div class="card-premium">
+                    <div class="container-img">
+                     
                     </div>
+                    <div class="content-card-premium">
+                        <h3 a href="#">Premium +</h3>
+                        <br>
+                        <p>From $7.49/month USD</p>
+                        <br>
+                        <ul class="checkmark">
+                            <li>Unlock Paid Stories from hundreds of stories</li>
+                            <li>No ad interruptions</li>
+                            <li>Unlimited offline stories</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="wrapper">
+                        <button type="submit" class="btn">Go Premium+</button>
+                        <p>Cancel anytime</p>
+                    </div>
+                </div>
+                 <!-- Producto 2 -->
+                 <div class="card-premium1">
+                    <div class="container-img">
+                    </div>
+                    <div class="content-card-premium1">
+                        <h3 a href="#">Premium</h3>
+                        <br>
+                        <p>From $4.99/month USD</p>
+                        <br>
+                        <ul class="checkmark">
+                            <li>Unlock any 1 Paid Stories per month from hundreds of stories</li>
+                            <li>No ad interruptions</li>
+                            <li>Unlimited offline free stories</li>
+                        </ul>
+                    </div>
+                    <div class="wrapper">
+                        <button type="submit" class="btn">Go Premium+</button>
+                        <p>Cancel anytime</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+			<div class="container container-footer">
+				<div class="menu-footer">
+					<div class="contact-info">
+						<p class="title-footer">Contact Info</p>
+						<ul>
+							<li>
+								Address: Km 4 ½ Carretera Norte, frente a la Parmalat
+							</li>
+							<li>Phone Number: 123-456-7890</li>
+							<li>Fax: 555</li>
+							<li>E-MaiL: BookCenter@support.com</li>
+						</ul>
+						<div class="social-icons">
+							<span class="facebook">
+								<i class="fa-brands fa-facebook-f"></i>
+							</span>
+							<span class="twitter">
+								<i class="fa-brands fa-twitter"></i>
+							</span>
+							<span class="youtube">
+								<i class="fa-brands fa-youtube"></i>
+							</span>
+							<span class="pinterest">
+								<i class="fa-brands fa-pinterest-p"></i>
+							</span>
+							<span class="instagram">
+								<i class="fa-brands fa-instagram"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="information">
+						<p class="title-footer">More Info</p>
+						<ul>
+							<li><a href="mas.html">About Us</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Terms and Conditions</a></li>
+						</ul>
+					</div>
+
+					<div class="my-account">
+						<p class="title-footer">My Account</p>
+
+						<ul>
+							<li><a href="#">My Favorites</a></li>
+							<li><a href="#">Reading History</a></li>
+							<li><a href="#">Wishlist</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="payment">
+					<img src="img/payment.png" alt="Pagos">
 				</div>
 			</div>
-        </header>
-        <div class="container-navbar">
-            <nav class="navbar container">
-                <i class="fa-solid fa-bars"></i>
-                <ul class="menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="mas.html">Acerca de nosotros</a></li>
-                </ul>
+		</footer>
+		<script
+			src="https://kit.fontawesome.com/81581fb069.js"
+		></script>
+		<script>
+			var app = document.getElementsByTagName("BODY")[0];
+			if (localStorage.lightMode == "dark") {
+				app.setAttribute("light-mode", "dark");
+			}
+		</script>
+		<script src="darkmode.js"></script>
+		<script>
+			let subMenu = document.getElementById("subMenu");
 
-                <form class="search-form">
-                    <input type="search" placeholder="Buscar..." />
-                    <button class="btn-search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
-            </nav>
-        </div>
-        <main class="main-content">
-            <section class="container specials">
-                <h1 class="heading-1">Especiales</h1>
-                <div class="container-products" id="lista-de-productos">
-                    <!-- Producto 1 -->
-                    <div class="card-product">
-                        <div class="container-img">
-                            <img src="img/habitosatomicos.jpg" alt="Cafe Irish" />
-                            <span class="discount">-13%</span>
-                            <div class="button-group">
-                                <span>
-                                    <i class="fa-regular fa-eye"></i>
-                                </span>
-                                <span>
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                                <span>
-                                    <i class="fa-solid fa-code-compare"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="content-card-product">
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                            <h3>Hábitos Atómicos</h3>
-                            <button class="add-cart" data-id = "1">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-                            <p class="price">$4.60 <span>$5.30</span></p>
-                        </div>
-                    </div>
-                    <!-- Producto 2 -->
-                    <div class="card-product">
-                        <div class="container-img">
-                            <img
-                                src="img/elprincipito.jpg"
-                                alt="Cafe incafe-ingles.jpg"
-                            />
-                            <span class="discount">-22%</span>
-                            <div class="button-group">
-                                <span>
-                                    <i class="fa-regular fa-eye"></i>
-                                </span>
-                                <span>
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                                <span>
-                                    <i class="fa-solid fa-code-compare"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="content-card-product">
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                            <h3>El Principito</h3>
-                            <button class="add-cart" data-id="2">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-                            <p class="price">$5.70 <span>$7.30</span></p>
-                        </div>
-                    </div>
-                    <!--Producto 3 -->
-                    <div class="card-product">
-                        <div class="container-img">
-                            <img src="img/segundaguerra.jpg" alt="Cafe Viena" />
-                            <span class="discount">-30%</span>
-                            <div class="button-group">
-                                <span>
-                                    <i class="fa-regular fa-eye"></i>
-                                </span>
-                                <span>
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                                <span>
-                                    <i class="fa-solid fa-code-compare"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="content-card-product">
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <h3>La segunda guerra mundial</h3>
-                            <button class="add-cart" data-id="3">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-                            <p class="price">$3.85 <span>$5.50</span></p>
-                        </div>
-                    </div>
-                    <!--Producto 4-->
-                    <div class="card-product">
-                        <div class="container-img">
-                            <img src="img/REVOLUCION.jpg" alt="Cafe Liqueurs" />
-                            <div class="button-group">
-                                <span>
-                                    <i class="fa-regular fa-eye"></i>
-                                </span>
-                                <span>
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                                <span>
-                                    <i class="fa-solid fa-code-compare"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="content-card-product">
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                            <h3>Revolución</h3>
-                            <button class="add-cart" data-id="4">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-                            <p class="price">$5.60</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer class="footer">
-                <div class="container container-footer">
-                    <div class="menu-footer">
-                        <div class="contact-info">
-                            <p class="title-footer">Información de Contacto</p>
-                            <ul>
-                                <li>
-                                    Dirección: Km 4 ½ Carretera Norte, frente a la Parmalat
-                                </li>
-                                <li>Teléfono: 123-456-7890</li>
-                                <li>Fax: 555</li>
-                                <li>EmaiL: booksCenter@support.com</li>
-                            </ul>
-                            <div class="social-icons">
-                                <span class="facebook">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </span>
-                                <span class="twitter">
-                                    <i class="fa-brands fa-twitter"></i>
-                                </span>
-                                <span class="youtube">
-                                    <i class="fa-brands fa-youtube"></i>
-                                </span>
-                                <span class="pinterest">
-                                    <i class="fa-brands fa-pinterest-p"></i>
-                                </span>
-                                <span class="instagram">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </span>
-                            </div>
-                        </div>
-    
-                        <div class="information">
-                            <p class="title-footer">Información</p>
-                            <ul>
-                                <li><a href="mas.html">Acerca de Nosotros</a></li>
-                                <li><a href="#">Información Delivery</a></li>
-                                <li><a href="#">Politicas de Privacidad</a></li>
-                                <li><a href="#">Términos y condiciones</a></li>
-                                <li><a href="#">Contactános</a></li>
-                            </ul>
-                        </div>
-    
-                        <div class="my-account">
-                            <p class="title-footer">Mi cuenta</p>
-    
-                            <ul>
-                                <li><a href="#">Mi cuenta</a></li>
-                                <li><a href="#">Historial de ordenes</a></li>
-                                <li><a href="#">Lista de deseos</a></li>
-                                <li><a href="#">Reembolsos</a></li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                    <div class="payment">
-                        <img src="img/payment.png" alt="Pagos">
-                    </div>
-                </div>
-            </footer>
-        </main>
+			function toggleMenu(){
+				subMenu.classList.toggle("open-menu");
+			}
+		</script>
 		<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-        <script src="script.js"></script>
 	</body>
 </html>
     
